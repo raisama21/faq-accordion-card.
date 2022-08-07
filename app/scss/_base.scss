@@ -1,0 +1,107 @@
+@use "./mixins" as u;
+
+/* custom properties */
+:root {
+  --textColorBlue-900: hsl(238, 29%, 16%);
+  --textColorBlue-700: hsl(237, 12%, 33%);
+  --textColorBlue-600: hsl(240, 6%, 50%);
+  --textColorRed: hsl(14, 88%, 65%);
+  --lineColor: hsl(240, 5%, 91%);
+  --bgSoftViolet: hsl(273, 75%, 66%);
+  --bgSoftBlue: hsl(240, 73%, 65%);
+
+  --fs-100: 0.75rem;
+
+  --size-900: 3rem;
+  --size-700: 2.5rem;
+  --size-600: 2rem;
+  --size-500: 1.75rem;
+  --size-400: 1.5rem;
+  --size-300: 1.25rem;
+  --size-200: 1.125rem;
+  --size-100: 1rem;
+  --size-75: 0.875rem;
+}
+
+/* css reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+/* visibility */
+
+.hide-for-mobile {
+  @include u.breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include u.breakpoint-up(large) {
+    display: none;
+  }
+}
+
+/* utility classes */
+.button-style {
+  border: none;
+  background-color: transparent;
+}
+
+.open {
+  font-weight: 700;
+  color: var(--textColorBlue-900);
+}
+
+.transform {
+  transform: rotate(-180deg);
+}
+
+body {
+  overflow: hidden;
+  font-family: "Kumbh Sans", sans-serif;
+}

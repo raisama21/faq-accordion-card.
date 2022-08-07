@@ -1,0 +1,159 @@
+@use "./mixins" as u;
+
+// typogrpahy
+h1 {
+  font-size: var(--size-500);
+  font-weight: 700;
+  text-align: center;
+  color: var(--textColorBlue-900);
+}
+
+h1 {
+  margin-bottom: var(--size-600);
+
+  @include u.breakpoint-up(large) {
+    max-width: 23.875rem;
+  }
+}
+
+button {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--textColorBlue-900);
+}
+
+p {
+  font-size: var(--fs-100);
+  font-weight: 400;
+  color: var(--textColorBlue-700);
+}
+
+body {
+  background-image: linear-gradient(var(--bgSoftViolet), var(--bgSoftBlue));
+}
+
+// design
+.container {
+  width: min(100%, 20.4375rem);
+  margin-inline: auto;
+  margin-top: 25vh;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: var(--size-400);
+
+  @include u.breakpoint-up(large) {
+    width: min(100%, 56.25rem);
+    margin-inline: auto;
+    margin-top: 13vh;
+    padding-block: 4.375rem;
+    display: grid;
+    grid-template-columns: 42.9% 57.1%;
+  }
+}
+
+.illustration {
+  position: relative;
+  padding-bottom: 8rem;
+
+  @include u.breakpoint-up(large) {
+    padding-bottom: 0;
+  }
+}
+
+.desktop {
+  @include u.breakpoint-up(large) {
+    overflow: hidden;
+  }
+}
+
+.illustration-box {
+  position: relative;
+}
+
+.illustration-mobile {
+  width: 70%;
+  padding-bottom: 3rem;
+  margin-inline: auto;
+
+  background-image: url("/images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center 96%;
+
+  position: absolute;
+  left: 12%;
+  transform: translateY(-47%);
+}
+
+.illustration-desktop {
+  transform: translateX(-16%);
+  background-image: url(/images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding-bottom: 5rem;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -152%);
+}
+
+.accordion {
+  padding-inline: var(--size-400);
+  padding-bottom: var(--size-900);
+
+  @include u.breakpoint-up(large) {
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
+}
+
+.accordion-item {
+  max-width: 23.875rem;
+  margin-bottom: var(--size-200);
+  border-bottom: 1px solid var(--textColorBlue-600);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--size-75);
+  min-width: 17.4375rem;
+
+  @include u.breakpoint-up(large) {
+    min-width: 23.875rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.accordion-button {
+  transition: 400ms;
+
+  &:hover {
+    color: var(--textColorRed);
+  }
+}
+
+.accordion-button > img {
+  transition: 300ms ease-in-out;
+}
+
+.accordion-body {
+  max-width: 15.5rem;
+  margin-bottom: var(--size-100);
+
+  @include u.breakpoint-up(large) {
+    max-width: 22.625rem;
+  }
+}
+
+.accordion-collapse {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease-out;
+}

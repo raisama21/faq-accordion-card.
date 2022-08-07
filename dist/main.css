@@ -1,0 +1,261 @@
+/* custom properties */
+:root {
+  --textColorBlue-900: hsl(238, 29%, 16%);
+  --textColorBlue-700: hsl(237, 12%, 33%);
+  --textColorBlue-600: hsl(240, 6%, 50%);
+  --textColorRed: hsl(14, 88%, 65%);
+  --lineColor: hsl(240, 5%, 91%);
+  --bgSoftViolet: hsl(273, 75%, 66%);
+  --bgSoftBlue: hsl(240, 73%, 65%);
+  --fs-100: 0.75rem;
+  --size-900: 3rem;
+  --size-700: 2.5rem;
+  --size-600: 2rem;
+  --size-500: 1.75rem;
+  --size-400: 1.5rem;
+  --size-300: 1.25rem;
+  --size-200: 1.125rem;
+  --size-100: 1rem;
+  --size-75: 0.875rem;
+}
+
+/* css reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+/* visibility */
+@media (max-width: 63.9375rem) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+/* utility classes */
+.button-style {
+  border: none;
+  background-color: transparent;
+}
+
+.open {
+  font-weight: 700;
+  color: var(--textColorBlue-900);
+}
+
+.transform {
+  transform: rotate(-180deg);
+}
+
+body {
+  overflow: hidden;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+h1 {
+  font-size: var(--size-500);
+  font-weight: 700;
+  text-align: center;
+  color: var(--textColorBlue-900);
+}
+
+h1 {
+  margin-bottom: var(--size-600);
+}
+@media (min-width: 64rem) {
+  h1 {
+    max-width: 23.875rem;
+  }
+}
+
+button {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--textColorBlue-900);
+}
+
+p {
+  font-size: var(--fs-100);
+  font-weight: 400;
+  color: var(--textColorBlue-700);
+}
+
+body {
+  background-image: linear-gradient(var(--bgSoftViolet), var(--bgSoftBlue));
+}
+
+.container {
+  width: min(100%, 20.4375rem);
+  margin-inline: auto;
+  margin-top: 25vh;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: var(--size-400);
+}
+@media (min-width: 64rem) {
+  .container {
+    width: min(100%, 56.25rem);
+    margin-inline: auto;
+    margin-top: 13vh;
+    padding-block: 4.375rem;
+    display: grid;
+    grid-template-columns: 42.9% 57.1%;
+  }
+}
+
+.illustration {
+  position: relative;
+  padding-bottom: 8rem;
+}
+@media (min-width: 64rem) {
+  .illustration {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  .desktop {
+    overflow: hidden;
+  }
+}
+
+.illustration-box {
+  position: relative;
+}
+
+.illustration-mobile {
+  width: 70%;
+  padding-bottom: 3rem;
+  margin-inline: auto;
+  background-image: url("/images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center 96%;
+  position: absolute;
+  left: 12%;
+  transform: translateY(-47%);
+}
+
+.illustration-desktop {
+  transform: translateX(-16%);
+  background-image: url(/images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding-bottom: 5rem;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -152%);
+}
+
+.accordion {
+  padding-inline: var(--size-400);
+  padding-bottom: var(--size-900);
+}
+@media (min-width: 64rem) {
+  .accordion {
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
+}
+
+.accordion-item {
+  max-width: 23.875rem;
+  margin-bottom: var(--size-200);
+  border-bottom: 1px solid var(--textColorBlue-600);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--size-75);
+  min-width: 17.4375rem;
+}
+@media (min-width: 64rem) {
+  .heading {
+    min-width: 23.875rem;
+  }
+}
+.heading:hover {
+  cursor: pointer;
+}
+
+.accordion-button {
+  transition: 400ms;
+}
+.accordion-button:hover {
+  color: var(--textColorRed);
+}
+
+.accordion-button > img {
+  transition: 300ms ease-in-out;
+}
+
+.accordion-body {
+  max-width: 15.5rem;
+  margin-bottom: var(--size-100);
+}
+@media (min-width: 64rem) {
+  .accordion-body {
+    max-width: 22.625rem;
+  }
+}
+
+.accordion-collapse {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease-out;
+}
+
+/*# sourceMappingURL=main.css.map */
